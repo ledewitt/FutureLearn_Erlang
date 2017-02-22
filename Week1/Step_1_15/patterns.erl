@@ -20,7 +20,6 @@ howManyEqual(_,_,_) -> 0.
 % exOr(X,Y) -> X=/=Y.
 
 % Case 3
-
 exOr(X,Y) -> not(X==Y).
 
 % Case Given as Example
