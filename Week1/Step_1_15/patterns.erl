@@ -13,8 +13,15 @@ howManyEqual(_,X,X) -> 2;
 howManyEqual(_,_,_) -> 0.
 
 % Case 1
-exOr(X,X) -> false;
-exOr(_,_) -> true.
+% exOr(X,X) -> false;
+% exOr(_,_) -> true.
+
+% Case 2
+% exOr(X,Y) -> X=/=Y.
+
+% Case 3
+
+exOr(X,Y) -> not(X==Y).
 
 % Case Given as Example
 % exOr(true,X) ->
