@@ -2,10 +2,20 @@
 -export([fac/1,
          loop/1,
          sum/1,
-         maximum/1
+         maximum/1,
+         fib/1
         ]).
 
-% Work from 1_21
+% Work from the problems in the text after presentation.
+
+fib(0) -> 0;
+fib(1) -> 1;
+fib(N) when N > 1 -> fib(N-1,fib(0),fib(1)).
+
+fib(0,_,Q) -> Q;
+fib(N,P,Q) -> fib(N-1,Q,P+Q).
+
+% Work from 1_21 Presentation
 
 fac(N) -> fac(N,1).
 
@@ -21,7 +31,7 @@ sum(N,P) when N > 0 -> sum(N-1, P+N).
 
 % Max value
 
-maximum(N) -> max(N,0).
+maximum(N) -> maximum(N,0).
 
 maximum(0,P) -> P;
 maximum(N,P) when N >= P -> maximum(N-1,N);
