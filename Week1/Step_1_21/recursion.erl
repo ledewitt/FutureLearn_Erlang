@@ -1,7 +1,8 @@
 -module(recursion).
 -export([fac/1,
          loop/1,
-         sum/1
+         sum/1,
+         maximum/1
         ]).
 
 % Work from 1_21
@@ -18,6 +19,13 @@ sum(N) -> sum(N,0).
 sum(0,P) -> P;
 sum(N,P) when N > 0 -> sum(N-1, P+N).
 
+% Max value
+
+maximum(N) -> max(N,0).
+
+maximum(0,P) -> P;
+maximum(N,P) when N >= P -> maximum(N-1,N);
+maximum(N,P) -> maximum(N-1,P).
 
 % Looping the loop
 
