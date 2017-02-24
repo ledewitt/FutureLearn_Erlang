@@ -3,10 +3,23 @@
          loop/1,
          sum/1,
          maximum/1,
-         fib/1
+         fib/1,
+         perfect/1
         ]).
 
 % Work from the problems in the text after presentation.
+
+% Perfect Numbers
+
+perfect(N) when N < 6 -> false;
+perfect(N) -> perfect(N-1,N,0).
+
+perfect(0,NUMB,P) when NUMB == P -> true;
+perfect(0,_,_) -> false;
+perfect(N,NUMB,P) when NUMB rem N == 0 -> perfect(N-1,NUMB,P+N);
+perfect(N,NUMB,P) -> perfect(N-1,NUMB,P).
+
+% Fibonacci Solution
 
 fib(0) -> 0;
 fib(1) -> 1;
